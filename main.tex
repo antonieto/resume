@@ -1,0 +1,229 @@
+%-------------------------
+% Resume in Latex
+% Author : Jose Antonio Chaires Monroy
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Jose Antonio Chaires Monroy} \\ \vspace{1pt}
+    \href{mailto:antonioch.mon@gmail.com}{\underline{antonioch.mon@gmail.com}} $|$
+    \href{https://linkedin.com/in/antonioch-mon}{\underline{linkedin.com/in/antonioch-mon}} $|$
+    \href{https://github.com/antonieto}{\underline{github.com/antonieto}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+    \resumeSubheading
+      {Tecnologico de Monterrey $|$ \textbf{GPA 98.17/100 (4.0/4.0)}}{Guadalajara, Mexico.}
+      {B.S Computer Science and Technology}{August 2020 -- June 2024}
+           \resumeItemListStart
+             \resumeItem{\textbf{Relevant Coursework:} Objected Oriented Programming, Data Structures and Algorithms, Computer Architecture, Analysis of Differential Equations.}
+          \resumeItemListEnd
+  \resumeSubHeadingListEnd
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+  \resumeSubheading
+      {Production Engineer}{October 2024 --- Present}
+      {Meta - AI Training Infrastructure}{New York, NY}
+      \resumeItemListStart
+        \resumeItem{Scaled a \textbf{ML training log stream processing system's} infrastructure to \textbf{210 hosts}, reducing log latency from \textbf{10 hours to 3 minutes}.}
+        \resumeItem{Built a \textbf{fleetwide profiling data pipeline} surfacing GPU waste insights across ML training jobs, identifying \textbf{4\%} of startup time spent on imports.}
+        \resumeItem{}
+      \resumeItemListEnd
+
+  \resumeSubheading
+      {Full Stack Software Engineer}{February 2024 --- August 2024}
+      {Atrato (YC 21) }{Guadalajara, MX (Remote)}
+      \resumeItemListStart
+        \resumeItem{Implemented a \textbf{queueing} system, resolving a \textbf{performance} bottleneck and enabling \textbf{bulk functionality} for an internal tool.}
+        \resumeItem{Worked on the design and implementation of a \textbf{business critic feature}, requiring extensive \textbf{refactoring} and design iteration.}
+        \resumeItem{Completely replaced legacy \textbf{logging behavior} for an improved AWS CloudWatch - leveraged solution.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Software Engineering Intern}{June 2023 --- September 2023}
+      {Google - Core Machine Learning Foundations}{Sunnyvale, CA}
+      \resumeItemListStart
+        \resumeItem{Developed a user-friendly application allowing software and machine learning Engineers to conduct \textbf{benchmarking} and identify performance regression causes across a comprehensive set of internal and open-source \textbf{Machine Learning models}.}
+        \resumeItem{Developed a job scheduling system to facilitate communication between Google Cloud Platform and our internal testing platform.}
+      \resumeItemListEnd
+% -----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
+
+    \resumeSubheading
+      {Software Engineer}{January 2023 -- June 2023}
+      {Lizza (YC W2022)}{Guadalajara, MX}
+      \resumeItemListStart
+        \resumeItem{Co-authored a \textbf{parallel} algorithm written in Go to optimize a database migration, resulting in a \textbf{x288 speedup}.}
+        \resumeItem{Designed the \textbf{central HTTP} client - server communication module, using several \textbf{design patterns} allowing for ease of \textbf{testing} and early failure finding.}
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {STEP Intern}{June 2022 -- September 2022}
+      {Google - Core Finance Works}{Manhattan (remote), NY}
+
+    \resumeItemListStart
+        \resumeItem{Developed a client side \textbf{HTTP cache system} for an \textbf{internal Angular TypeScript application}, using several testing frameworks. \textbf{Achieved 40\% hit ratio}, improving user experience and responsiveness.}
+        \resumeItem{Designed an internal \textbf{framework API extension}, improving the customizability of auto-generated dropdowns.}
+      \resumeItemListEnd
+
+
+    \resumeSubheading
+      {Software Developer}{January 2022 -- June 2022}
+      {Atrevi}{Guadalajara, MX}
+      \resumeItemListStart
+        \resumeItem{Developed a \textbf{Django} Rest API, using \textbf{Django Rest Framework}, \textbf{PostgreSQL} and integrating several \textbf{AWS} cloud services, including \textbf{Cognito} and \textbf{ECS}.}
+        \resumeItem{Desgined and developed a \textbf{React Native} application and implemented a state management system using \textbf{Redux}.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+% %-----------PROJECTS-----------
+% \section{Projects}
+%     \resumeSubHeadingListStart
+%       \resumeProjectHeading
+%           {\textbf{IJALTI Recruitment Tool} $|$ \emph{Typescript, Google Cloud Platform, PostgreSQL}}{March 2022 -- June 2022}
+%           \resumeItemListStart
+%             \resumeItem{Software Development course final project. Recruiting tool for mexican IT association.}
+%             \resumeItem{Designed and developed a \textbf{NodeJS} monolithic application with the backend team, building several services using \textbf{ExpressJS}, \textbf{TypeScript} and \textbf{PostgreSQL}, integration Google Cloud Platform authentication services.}
+%             \resumeItem{Built and integrated a \textbf{search mechanism} for a React application, designing and developing several UI components.}
+%           \resumeItemListEnd
+%     \resumeSubHeadingListEnd
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Java, TypeScript, Go, Python, C++ SQL (Postgres, MySQL), Rust, MATLAB.} \\
+     \textbf{Frameworks}{: React, Angular, Next.js, Django, Spring Boot, Flask, Fast API.} \\
+     \textbf{Developer Tools}{: Claude Code, Git, Neovim, linux, Docker, Kubernetes, GitHub Actions, Bash scripting.} \\
+     \textbf{Libraries}{: Tensorflow, Matplotlib, NumPy, gRPC, PyTorch}
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
+
