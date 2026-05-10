@@ -1,0 +1,58 @@
+name: Auto-Sync PDF
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'main.tex'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-sync:
+    runs-on: ubuntu-latest
+    # 2h sleep + up to 40min for texlive install + build
+    timeout-minutes: 200
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Wait 2 hours for commit to settle
+        run: sleep 7200
+
+      - name: Check if HEAD is still the triggering commit
+        id: verify
+        run: |
+          git fetch origin main
+          CURRENT=$(git rev-parse origin/main)
+          TRIGGER="${{ github.sha }}"
+          if [ "$CURRENT" = "$TRIGGER" ]; then
+            echo "proceed=true" >> $GITHUB_OUTPUT
+          else
+            echo "proceed=false" >> $GITHUB_OUTPUT
+            echo "HEAD has moved on ($CURRENT != $TRIGGER), skipping build."
+          fi
+
+      - name: Install LaTeX
+        if: steps.verify.outputs.proceed == 'true'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y texlive-latex-extra texlive-fonts-extra latexmk
+
+      - name: Build PDF
+        if: steps.verify.outputs.proceed == 'true'
+        run: |
+          latexmk -pdf -pdflatex='pdflatex -interaction=nonstopmode' -interaction=nonstopmode main.tex
+
+      - name: Commit and push PDF
+        if: steps.verify.outputs.proceed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git add -f main.pdf
+          git commit -m "AUTO-SYNC - ${{ github.event.head_commit.message }}"
+          git push
