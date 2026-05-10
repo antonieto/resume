@@ -20,8 +20,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Wait 2 hours for commit to settle
-        run: sleep 7200
+      - name: Record start time
+        run: echo "START=$(date +%s)" >> $GITHUB_ENV
+
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y texlive-latex-extra texlive-fonts-extra latexmk
+
+      - name: Wait remaining time (2 hours from start)
+        run: |
+          ELAPSED=$(( $(date +%s) - START ))
+          REMAINING=$(( 7200 - ELAPSED ))
+          if [ $REMAINING -gt 0 ]; then
+            echo "Sleeping ${REMAINING}s..."
+            sleep $REMAINING
+          fi
 
       - name: Check if HEAD is still the triggering commit
         id: verify
@@ -35,12 +49,6 @@ jobs:
             echo "proceed=false" >> $GITHUB_OUTPUT
             echo "HEAD has moved on ($CURRENT != $TRIGGER), skipping build."
           fi
-
-      - name: Install LaTeX
-        if: steps.verify.outputs.proceed == 'true'
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y texlive-latex-extra texlive-fonts-extra latexmk
 
       - name: Build PDF
         if: steps.verify.outputs.proceed == 'true'
