@@ -119,81 +119,69 @@
 \end{center}
 
 
-%-----------EDUCATION-----------
-\section{Education}
-\resumeSubHeadingListStart
-    \resumeSubheading
-      {Tecnologico de Monterrey $|$ \textbf{GPA 98.17/100 (4.0/4.0)}}{Guadalajara, Mexico.}
-      {B.S Computer Science and Technology}{August 2020 -- June 2024}
-           \resumeItemListStart
-             \resumeItem{\textbf{Relevant Coursework:} Objected Oriented Programming, Data Structures and Algorithms, Computer Architecture, Analysis of Differential Equations.}
-          \resumeItemListEnd
-  \resumeSubHeadingListEnd
 %-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
 
   \resumeSubheading
       {Production Engineer}{October 2024 --- Present}
-      {Meta - AI Training Infrastructure}{New York, NY}
+	  {Meta - AI Training (RecSys) Infrastructure}{New York, NY}
       \resumeItemListStart
+	    
+        \resumeItem{Fixed a \textbf{performance regression} in the job ranker's \textbf{critical logging path} that caused \textbf{30+ min SLI data lag} — leaving the team blind to incidents — and triggered \textbf{MySQL connection exhaustion} and \textbf{data loss} across ranking iterations; reduced lag to \textbf{under 200s}.}
         \resumeItem{Scaled a \textbf{ML training log stream processing system's} infrastructure to \textbf{210 hosts}, reducing log latency from \textbf{10 hours to 3 minutes}.}
-        \resumeItem{Built a \textbf{fleetwide profiling data pipeline} surfacing GPU waste insights across ML training jobs, identifying \textbf{4\%} of startup time spent on imports.}
-        \resumeItem{}
+        \resumeItem{Built a \textbf{fleetwide Python profiling pipeline} to surface GPU efficiency insights across ML training jobs, producing a \textbf{technical finding} that \textbf{4\%} of GPU startup time is lost to imports — providing actionable \textbf{technical direction} for codebase hygiene at scale.}
+        \resumeItem{Drove \textbf{AI adoption} by building an \textbf{agentic workflow} that automated \textbf{integration test authoring}, producing a \textbf{10k-line test suite} that caught \textbf{2 critical incidents}.}
       \resumeItemListEnd
 
   \resumeSubheading
       {Full Stack Software Engineer}{February 2024 --- August 2024}
-      {Atrato (YC 21) }{Guadalajara, MX (Remote)}
+      {Atrato (YC 21)}{Guadalajara, MX (Remote)}
       \resumeItemListStart
-        \resumeItem{Implemented a \textbf{queueing} system, resolving a \textbf{performance} bottleneck and enabling \textbf{bulk functionality} for an internal tool.}
-        \resumeItem{Worked on the design and implementation of a \textbf{business critic feature}, requiring extensive \textbf{refactoring} and design iteration.}
-        \resumeItem{Completely replaced legacy \textbf{logging behavior} for an improved AWS CloudWatch - leveraged solution.}
+        \resumeItem{Resolved a \textbf{QPS-induced service reliability} issue on a business-critical endpoint by implementing a \textbf{load-shedding queue}, which also unlocked \textbf{bulk transaction ingestion} for finance agents — saving \textbf{10 hrs/week} in manual operations.}
+        \resumeItem{Delivered \textit{Multicredito} — a \textbf{multi-loan BNPL} feature deferred for years due to complexity — by designing and building the \textbf{API} and \textbf{UI}, enabling users to hold and manage multiple loans simultaneously at independent terms.}
+        \resumeItem{Migrated a \textbf{MySQL-backed in-house logger} — whose table had grown unqueryable — to \textbf{AWS CloudWatch} with a \textbf{codebase-wide refactor} completed in \textbf{2 weeks}.}
       \resumeItemListEnd
 
     \resumeSubheading
       {Software Engineering Intern}{June 2023 --- September 2023}
       {Google - Core Machine Learning Foundations}{Sunnyvale, CA}
       \resumeItemListStart
-        \resumeItem{Developed a user-friendly application allowing software and machine learning Engineers to conduct \textbf{benchmarking} and identify performance regression causes across a comprehensive set of internal and open-source \textbf{Machine Learning models}.}
-        \resumeItem{Developed a job scheduling system to facilitate communication between Google Cloud Platform and our internal testing platform.}
+        \resumeItem{Built a \textbf{benchmarking} application for software and ML engineers to identify \textbf{performance regressions} across internal and open-source \textbf{ML models}.}
+        \resumeItem{Built a \textbf{Python job queue} and \textbf{UI} for capacity-constrained \textbf{ML performance test} scheduling, replacing a brittle \textbf{manual CLI} that failed under load with a \textbf{self-service} workflow.}
       \resumeItemListEnd
-% -----------Multiple Positions Heading-----------
-%    \resumeSubSubheading
-%     {Software Engineer I}{Oct 2014 - Sep 2016}
-%     \resumeItemListStart
-%        \resumeItem{Apache Beam}
-%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
-%     \resumeItemListEnd
-%    \resumeSubHeadingListEnd
-%-------------------------------------------
 
     \resumeSubheading
       {Software Engineer}{January 2023 -- June 2023}
-      {Lizza (YC W2022)}{Guadalajara, MX}
+      {Lizza (YC W22)}{Guadalajara, MX}
       \resumeItemListStart
-        \resumeItem{Co-authored a \textbf{parallel} algorithm written in Go to optimize a database migration, resulting in a \textbf{x288 speedup}.}
-        \resumeItem{Designed the \textbf{central HTTP} client - server communication module, using several \textbf{design patterns} allowing for ease of \textbf{testing} and early failure finding.}
+        \resumeItem{Rewrote a database migration pipeline in \textbf{Go} with a \textbf{maximally parallelizable} architecture, cutting runtime from \textbf{20+ hours to under 5 minutes} (\textbf{288x speedup}) and unblocking the full deployment of a new backend.}
     \resumeItemListEnd
 
     \resumeSubheading
       {STEP Intern}{June 2022 -- September 2022}
       {Google - Core Finance Works}{Manhattan (remote), NY}
-
     \resumeItemListStart
-        \resumeItem{Developed a client side \textbf{HTTP cache system} for an \textbf{internal Angular TypeScript application}, using several testing frameworks. \textbf{Achieved 40\% hit ratio}, improving user experience and responsiveness.}
-        \resumeItem{Designed an internal \textbf{framework API extension}, improving the customizability of auto-generated dropdowns.}
+        \resumeItem{Built a client-side \textbf{HTTP cache layer} for an internal \textbf{Angular/TypeScript} app, \textbf{achieving 40\% hit ratio} and improving responsiveness.}
+        \resumeItem{Designed an internal \textbf{framework API extension} that improved customizability of auto-generated dropdowns.}
       \resumeItemListEnd
-
 
     \resumeSubheading
       {Software Developer}{January 2022 -- June 2022}
       {Atrevi}{Guadalajara, MX}
       \resumeItemListStart
-        \resumeItem{Developed a \textbf{Django} Rest API, using \textbf{Django Rest Framework}, \textbf{PostgreSQL} and integrating several \textbf{AWS} cloud services, including \textbf{Cognito} and \textbf{ECS}.}
-        \resumeItem{Desgined and developed a \textbf{React Native} application and implemented a state management system using \textbf{Redux}.}
+        \resumeItem{Assumed a \textbf{technical leadership} role in a small team building a \textbf{personal finance coach} mobile app.}
+        \resumeItem{Architected the \textbf{state management} layer for the \textbf{React Native} frontend and led the design of the app's \textbf{authentication} backbone, backed by \textbf{AWS} and a \textbf{Django} REST API.}
       \resumeItemListEnd
 
+  \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+    \resumeSubheading
+      {Tecnologico de Monterrey $|$ \textbf{GPA 98.17/100 (4.0/4.0)}}{Guadalajara, Mexico.}
+      {B.S Computer Science and Technology}{August 2020 -- June 2024}
   \resumeSubHeadingListEnd
 
 
@@ -216,9 +204,9 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: Java, TypeScript, Go, Python, C++ SQL (Postgres, MySQL), Rust, MATLAB.} \\
+     \textbf{Languages}{: Java, TypeScript, Go, Python, C++, SQL (Postgres, MySQL), Rust, MATLAB.} \\
      \textbf{Frameworks}{: React, Angular, Next.js, Django, Spring Boot, Flask, Fast API.} \\
-     \textbf{Developer Tools}{: Claude Code, Git, Neovim, linux, Docker, Kubernetes, GitHub Actions, Bash scripting.} \\
+     \textbf{Developer Tools}{: Claude Code, Git, Neovim, Linux, Docker, Kubernetes, GitHub Actions, Bash scripting.} \\
      \textbf{Libraries}{: Tensorflow, Matplotlib, NumPy, gRPC, PyTorch}
     }}
  \end{itemize}
